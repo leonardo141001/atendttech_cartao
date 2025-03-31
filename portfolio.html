@@ -1,0 +1,2009 @@
+<html lang="pt-br"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Produtos</title>
+    <style>
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .header {
+                display: flex;         /* Faz o título e o ícone ficarem lado a lado */
+                align-items: center;   /* Alinha verticalmente */
+                justify-content: center; /* Centraliza horizontalmente */
+                padding: 10px;
+                background-color: white;
+                border: 2px solid #007BFF ;
+                position: relative;
+                margin-bottom: 2%;
+            }
+
+            .menu-button {
+            font-size: 24px;
+            cursor: pointer;
+            background: #007BFF;
+            color: #f5f5f5;
+            border: none;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .filters {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            z-index: 1000; /* Garante que o menu fique acima de tudo */
+        }
+       
+        .filters button:hover {
+            background: #f0f0f0;
+        }
+        .filters.active {
+            display: block;
+        }
+        
+        .filters button {
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            background: #007BFF;
+            color: white;
+            border-radius: 5px;
+        }
+        .filters button:hover {
+            background: #007BFF;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            justify-content: center;
+        }
+        .product-card {
+            background: white;
+            border: 2px solid #007BFF;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .product-title {
+            background: #007BFF;
+            color: white;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .product-image {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .product-specs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+            margin: 10px 0;
+        }
+        .spec-box {
+            background: #003366;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .units-box, .price-box {
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+            margin: 10px 0;
+        }
+        .price-box {
+            font-size: 20px;
+            color: #007BFF;
+        }
+        @media (max-width: 600px) {
+            .filters button {
+                width: 100%;
+            }
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Catálogo de Produtos</h2>
+            <button class="menu-button">☰</button>
+        </div>
+        <div class="filters">
+            <button onclick="filterSelection('all')">Todos</button>
+            <button onclick="filterSelection('Carregador')">Carregadores</button>
+            <button onclick="filterSelection('Fone')">Fones de Ouvido</button>
+            <button onclick="filterSelection('Caixa')">Caixas de Som</button>
+            <button onclick="filterSelection('suporte')">Suporte</button>
+            <button onclick="filterSelection('camera')">Camera</button>
+            <button onclick="filterSelection('relogio')">Relogio</button>
+            <button onclick="filterSelection('garrafa')">Garrafa</button>
+            <button onclick="filterSelection('faca')">facas</button>
+            <button onclick="filterSelection('outro')">Outros</button>
+        </div>
+        <div class="gallery">
+            <div class="product-card Carregador" style="display: block;">
+                <div class="product-title">CArregador Turbo <br>PEI-216</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\carregadores\carregador1.jpg" class="product-image" alt="Carregador" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Marca Peining</div>
+                    <div class="spec-box">Entrada USB-C</div>
+                    <div class="spec-box">Saida Lightning 4.8A</div>
+                    <div class="spec-box">1 metro</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 11,50</div>
+            </div>
+            <div class="product-card Carregador" style="display: block;">
+                <div class="product-title">Carregador Turbo <br>KD-692</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\carregadores\carregador692.jfif" class="product-image" alt="Carregador" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Entrada USB-C</div>
+                    <div class="spec-box">Saida Lightning</div>
+                    <div class="spec-box">1 metro</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 24,50</div>                
+            </div>
+            <div class="product-card Carregador" style="display: block;">
+                <div class="product-title">Carregador Turbo <br>CAR-3159</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\carregadores\carregador3159.jpg" class="product-image" alt="Carregador" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Marca Inova</div>
+                    <div class="spec-box">Entrada USB-C</div>
+                    <div class="spec-box">Porta Dupla</div>
+                    <div class="spec-box">Saida Lightning 40W</div>
+                    <div class="spec-box">1 metro</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 7,00</div>                
+            </div>
+            <div class="product-card Carregador" style="display: block;">
+                <div class="product-title">Cabo Original Iphone</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\carregadores\cabo.webp" class="product-image" alt="Carregador" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Para Iphone 15</div>
+                    <div class="spec-box">Cabo USB-C</div>
+                    <div class="spec-box">Saida Lightning 60w</div>
+                    <div class="spec-box">1 metro</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 6,00</div>                
+            </div>
+            <div class="product-card Carregador" style="display: block;">
+                <div class="product-title">Carregador Turbo <br>PEI-185</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\carregadores\carga.webp" class="product-image" alt="Carregador" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Marca Peining</div>
+                    <div class="spec-box">Entrada USB</div>
+                    <div class="spec-box">Saida Lightning 6A</div>
+                    <div class="spec-box">1 metro</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 11,50</div>                
+            </div>
+            <div class="product-card Carregador" style="display: block;">
+                <div class="product-title">Carregador IPhone</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\carregadores\carregadoriphone.webp" class="product-image" alt="Carregador" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Marca Iphone</div>
+                    <div class="spec-box">Entrada USB-C</div>
+                    <div class="spec-box">Saida Lightning 20W</div>
+                    <div class="spec-box">1 metro</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 20,00</div>                
+            </div>
+            <div class="product-card Carregador" style="display: block;">
+                <div class="product-title">Carregador Turbo <br>CA31-4</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\carregadores\goll.webp" class="product-image" alt="Carregador" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Marca Gold</div>
+                    <div class="spec-box">Entrada USB-C</div>
+                    <div class="spec-box">Saida Lightning 6.1A</div>
+                    <div class="spec-box">1 metro</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 21,50</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Carregador veicular IOS</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\veicular2.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 12,50</div>                
+            </div>
+            <div class="product-card Carregador" style="display: block;">
+                <div class="product-title">Carregador Portatil</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\carregadores\portatil.jpg" class="product-image" alt="Carregador" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Marca ESPADA</div>
+                    <div class="spec-box">Carga 20.000mAH</div>
+                    <div class="spec-box">Entrada USB-C</div>
+                    <div class="spec-box">Saida Lightning 3.1A</div>
+                    <div class="spec-box">1 metro</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 78,00</div>                
+            </div>
+            <div class="product-card Carregador" style="display: block;">
+                <div class="product-title">Carregador Portatil</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\carregadores\portatil11.jpeg" class="product-image" alt="Carregador" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Marca a´GOLDpro</div>
+                    <div class="spec-box">Carga 10.000mAH</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 72,00</div>                
+            </div>
+            <div class="product-card Carregador" style="display: block;">
+                <div class="product-title">Carregador Portatil</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\carregadores\portatil1.jpeg" class="product-image" alt="Carregador" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Carga 1000mAH</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 58,00</div>                
+            </div>
+            <div class="product-card Carregador" style="display: block;">
+                <div class="product-title">Carregador Portatil</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\carregadores\bateria15.png" class="product-image" alt="Carregador" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Carga 50.000mAH</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 192,00</div>                
+            </div>
+            <!--<div class="product-card Carregador" style="display: block;">
+                <div class="product-title">Carregador Portatil</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\carregadores\bateria12.jpg" class="product-image" alt="Carregador" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Carga 30.000mAH</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 0,00</div>                
+            </div>-->
+            <div class="product-card Carregador" style="display: block;">
+                <div class="product-title">Carregador Portatil</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\carregadores\bateria13.jpg" class="product-image" alt="Carregador" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Carga 20.000mAH</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 78,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">T para carregador</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\T.webp" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 2,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">bateria 1000mah</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\imagenszap\zap6.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 72,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Bateria indução</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\imagenszap\zap4.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 40,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Bateria onex <br>20000mAh</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\onex.webp" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 68,00</div>                
+            </div>
+            <div class="product-card Carregador" style="display: block;">
+                <div class="product-title">Carregador Portatil</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\carregadores\bateria114.jpg" class="product-image" alt="Carregador" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Carga 10.000mAH</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 75,00</div>                
+            </div>
+            <div class="product-card Fone" style="display: block;">
+                <div class="product-title">Headphone Bluetooth</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\fones\headofone.jpg" class="product-image" alt="Headphone" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Potência máxima de entrada: 20MW</div>
+                    <div class="spec-box">Tamanho do alto falante: 40mm</div>
+                    <div class="spec-box">Resposta de frequência: 20Hz-20kHz</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 45,00</div>                
+            </div>
+            <div class="product-card Fone" style="display: block;">
+                <div class="product-title">Headphone JBL Bluetooth</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\fones\headphone.jpg" class="product-image" alt="Headphone JBL" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Potencia maxima de entrada: 30MW</div>
+                    <div class="spec-box">Tamanho do alto falante: 33mm</div>
+                    <div class="spec-box">Resposta de frequência: 20 Hz-20 kHz</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 34,00</div>                
+            </div>
+            <div class="product-card Fone" style="display: block;">
+                <div class="product-title">Headphone H´MASTON</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\fones\headphonep.jpg" class="product-image" alt="Headphone JBL" loading="lazy">
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 58,00</div>                
+            </div>
+            <div class="product-card Fone" style="display: block;">
+                <div class="product-title">FONE Bluetooh 607</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\fones\fone.png" class="product-image" alt="Headphone JBL" loading="lazy">
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 22,00</div>                
+            </div>
+            <div class="product-card Fone" style="display: block;">
+                <div class="product-title">Fone bluetooh M10</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\fones\foneazul.jpg" class="product-image" alt="Carregador KD-692" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Vida útil estimada bateria: 3-5 horas</div>
+                    <div class="spec-box">Bluetooh</div>
+                    <div class="spec-box">Capacidade da Bateria (mAh): 600mah</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 16,00</div>                
+            </div>
+            <div class="product-card Fone" style="display: block;">
+                <div class="product-title">Fone bluetooh Xiaomi</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\fones\fonexiaomi.jpg" class="product-image" alt="Fone xiaomi" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Conector de fones: USB</div>
+                    <div class="spec-box">Vida útil estimada bateria:4 horas</div>
+                    <div class="spec-box">Resposta de frequência:20Hz - 20kHz</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 16,00</div>                
+            </div>
+            <div class="product-card Fone" style="display: block;">
+                <div class="product-title">Fone de ouvido <br>FON-9809</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\fones\fonebranco.jpg" class="product-image" alt="Fone FON-9809" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Tipo de Conexão: Com fio</div>
+                    <div class="spec-box">Marca Inova</div>
+                    <div class="spec-box">Resposta de frequência: 20Hz-20kHz</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 4,50</div>                
+            </div>
+            <div class="product-card Fone" style="display: block;">
+                <div class="product-title">Stereo Headphone P2</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\fones\fonestereo.jpg" class="product-image" alt="Stereo Headphone" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Compatibilidade universal</div>
+                    <div class="spec-box">Som de alta qualidade</div>
+                    <div class="spec-box">Conforto e portabilidade</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 2,00</div>                
+            </div>
+            <div class="product-card Fone" style="display: block;">
+                <div class="product-title">Fone de ouvido <br>EJ-S8</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\fones\fonehmson.jpg" class="product-image" alt="Fone EJ-S8" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">comprimento do cabo é de 1.2m</div>
+                    <div class="spec-box">Marca H'maston</div>
+                    <div class="spec-box">Resposta de frequência: 20Hz-20kHz</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 5,00</div>                
+            </div>
+            <div class="product-card Fone" style="display: block;">
+                <div class="product-title">Headphone P9</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\imagenszap\zap22.jpg" class="product-image" alt="Fone EJ-S8" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 29,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa bluetooh <br>GTS-1373</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\caixadeluz.webp" class="product-image" alt="Caixa GTS-1373" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Marca Greatnice</div>
+                    <div class="spec-box">bateria é recarregável</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 23,00</div>                
+            </div>
+
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa bluetooh <br>Ws-887</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\caixablue.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Capacidade da bateria: 400mAh</div>
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 14,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Boombox3</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\boom.webp" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 2.050,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa Hsul IPX6</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\hsul.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 175,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa onex</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\onex1.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 25,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">PartyBox encore essential</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\box.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 1.350,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa H`maston 40W</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\hmaston.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 180,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa de som 6600 H`sul</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\hsul.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 290,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa 10W</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\10w.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 22,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">CAIXA DE SOM</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\caixa10.jpg" class="product-image" alt="Caixa de som" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Eletromex 10W</div>
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 28,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">mini caixa de som</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\mini.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 17,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa HSUL hsy</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\hsy.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 118,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">caixa s450</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\s450.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 93,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">caixa H´MASTON 8W</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\8w.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 70,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">caixa gold pro 60W</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\gold4.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 280,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">caixa kts-1329</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\kts.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 210,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">partybox club 120</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\club.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 1950,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">caixa H`SUL dois microfones</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\dois.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 299,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">caixa h´maston 30W ipx5</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\maston.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 190,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Partyboxstage320</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\320.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 2.850,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">caixa 10W</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\caixa11.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 22,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa HSJ-3000</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\caixa13.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 280,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa H´SUL IPX6</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\caixa14.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 175,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa A´Gold 20W</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\caixa15.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 110,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa H´MASTON 40W</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\caixa16.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 180,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa A´Gold</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\caixa17.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 280,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa onex 25W</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\caixa18.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 125,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa H´sul 10Wx2</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\caixa19.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 118,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa de som XlS portatil</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\caixa20.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 33,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa onex portatil</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\caixa21.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 25,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa Imenso</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\caixa22.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 450,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa Imenso ims-x42</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\caixa23.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 1000,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa Imenso X37</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\caixa24.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 700,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa Imenso X59</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\caixa25.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 600,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">Caixa imenso X65</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\caixa26.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 820,00</div>                
+            </div>
+            <div class="product-card Caixa" style="display: block;">
+                <div class="product-title">caixa imenso X71</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\caixa som\caixa27.jpg" class="product-image" alt="Carregando" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Bluetooth</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 199,90</div>                
+            </div>
+            <div class="product-card suporte" style="display: block;">
+                <div class="product-title">Suporte De Celular</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\suportes\suportecelular.jpg" class="product-image" alt="Suporte" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Marca Peining</div>
+                    <div class="spec-box">Fixação de suporte Ajuste pinça</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 20,00</div>                
+            </div>
+            <div class="product-card suporte" style="display: block;">
+                <div class="product-title">Suporte de Celular para Carro</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\suportes\suportecarro.jpg" class="product-image" alt="Suporte" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Material: Plástico, Silicone, Metal</div>
+                    <div class="spec-box">Modelos compatíveis Todos</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 11,00</div>                
+            </div>
+            <div class="product-card suporte" style="display: block;">
+                <div class="product-title">Suporte Notebook</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\suportes\suportenote.jpg" class="product-image" alt="Suporte notebook" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Tipo de produto: Dobrável e ajustável</div>
+                    <div class="spec-box">Tipo de suporte ou fixação: Sobre a mesa</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 6,50</div>                
+            </div>
+            <div class="product-card suporte" style="display: block;">
+                <div class="product-title">Tripe de celular</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\suportes\tripe.jfif" class="product-image" alt="Tripe celular" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">altura maxima: 68cm</div>
+                    <div class="spec-box">material: Abs alta qualidade</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 16,00</div>                
+            </div>
+            <div class="product-card suporte" style="display: block;">
+                <div class="product-title">Suporte para carro</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\suportes\suporte7.jpg" class="product-image" alt="Tripe celular" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">rotação 360° graus</div>
+                    <div class="spec-box">estabilizador anti-vibração</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 15,00</div>                
+            </div>
+            <div class="product-card suporte" style="display: block;">
+                <div class="product-title">Suporte para carro</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\suportes\suporte8.jpg" class="product-image" alt="Tripe celular" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 15,00</div>                
+            </div>
+            <div class="product-card suporte" style="display: block;">
+                <div class="product-title">Suporte para carro</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\suportes\suporte9.jpg" class="product-image" alt="Tripe celular" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">travamento automátcio</div>
+                    <div class="spec-box">operação simple</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 18,00</div>                
+            </div>
+            <div class="product-card camera" style="display: block;">
+                <div class="product-title">Câmera Smart Wifi</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\cameras\camerajortan.jpg" class="product-image" alt="Camera smart" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Câmera IP externa wifi dome PTZ.</div>
+                    <div class="spec-box">Gira 320° na horizontal - 110° na vertical.</div>
+                    <div class="spec-box">Microfone e alto falante integrados.</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 100,00</div>                
+            </div>
+            <div class="product-card camera" style="display: block;">
+                <div class="product-title">Câmera de movimento G4-5</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\cameras\camerakab.jpg" class="product-image" alt="Camera de movimento" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Qualidade de resoluçao Full HD 1080p</div>
+                    <div class="spec-box">Campo visual 360</div>
+                    <div class="spec-box">Com visão noturna colorida</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 55,00</div>                
+            </div>
+            <div class="product-card camera" style="display: block;">
+                <div class="product-title">Câmera Jortan Jt-2024</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\cameras\camerajor.jpg" class="product-image" alt="Camera jortan" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Tipo de resoluçãO HD</div>
+                    <div class="spec-box">Com visão noturna colorida</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 199,00</div>                
+            </div>
+            <div class="product-card relogio" style="display: block;">
+                <div class="product-title">Smart W62</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\relogios\relogiobagik.jpg" class="product-image" alt="Smart W62" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Tipo de Item Smartwatch</div>
+                    <div class="spec-box">Marca BASIKE</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 99,00</div>                
+            </div>
+            <div class="product-card relogio" style="display: block;">
+                <div class="product-title">Smarthwath S10 ULTRA+</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\relogios\relo.jpg" class="product-image" alt="Smart S10" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Com Bluetooth</div>
+                    <div class="spec-box">Com GPS</div>
+                    <div class="spec-box">Duração da bateria: 1 semanas</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 75,00</div>                
+            </div>
+            <div class="product-card relogio" style="display: block;">
+                <div class="product-title">Smarthwath W85 PRO MAX</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\relogios\relogioberk.jpg" class="product-image" alt="Smart W85" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Monitor de Frequência Cardíaca</div>
+                    <div class="spec-box">Controle de Música por Bluetooth</div>
+                    <div class="spec-box">Recepção de Notificações</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 99,00</div>                
+            </div>
+            <div class="product-card relogio" style="display: block;">
+                <div class="product-title">Relogio </div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\relogios\relogio1.jpg" class="product-image" alt="Smart W85" loading="lazy">
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 22,00</div>                
+            </div>
+            <div class="product-card relogio" style="display: block;">
+                <div class="product-title">Relogio </div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\relogios\relogio2.jpg" class="product-image" alt="Smart W85" loading="lazy">
+
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 22,00</div>                
+            </div><div class="product-card relogio" style="display: block;">
+                <div class="product-title">Relogio </div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\relogios\relogio3.jpg" class="product-image" alt="Smart W85" loading="lazy">
+
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 22,00</div>                
+            </div><div class="product-card relogio" style="display: block;">
+                <div class="product-title">Relogio </div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\relogios\relogio4.jpg" class="product-image" alt="Smart W85" loading="lazy">
+
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 22,00</div>                
+            </div><div class="product-card relogio" style="display: block;">
+                <div class="product-title">Relogio </div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\relogios\relogio5.jpg" class="product-image" alt="Smart W85" loading="lazy">
+
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 22,00</div>                
+            </div><div class="product-card relogio" style="display: block;">
+                <div class="product-title">Relogio </div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\relogios\relogio6.jpg" class="product-image" alt="Smart W85" loading="lazy">
+
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 22,00</div>                
+            </div><div class="product-card relogio" style="display: block;">
+                <div class="product-title">Relogio </div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\relogios\relogio7.jpg" class="product-image" alt="Smart W85" loading="lazy">
+
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 22,00</div>                
+            </div><div class="product-card relogio" style="display: block;">
+                <div class="product-title">Relogio </div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\relogios\relogio8.jpg" class="product-image" alt="Smart W85" loading="lazy">
+
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 22,00</div>                
+            </div><div class="product-card relogio" style="display: block;">
+                <div class="product-title">Relogio </div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\relogios\relogio9.jpg" class="product-image" alt="Smart W85" loading="lazy">
+   
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 22,00</div>                
+            </div><div class="product-card relogio" style="display: block;">
+                <div class="product-title">Relogio </div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\relogios\relogio10.jpg" class="product-image" alt="Smart W85" loading="lazy">
+
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 22,00</div>                
+            </div>
+            <div class="product-card relogio" style="display: block;">
+            <div class="product-title">Relogio </div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\relogios\relogio11.jpg" class="product-image" alt="Smart W85" loading="lazy">
+
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 22,00</div>                
+        </div>
+        <div class="product-card outro" style="display: block;">
+            <div class="product-title">Kit faca</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\outros\faca.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 24,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca Flamengo</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca1.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca2.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do São Paulo</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca3.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca4.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca5.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca6.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 140,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do Palmeiras</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca7.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do Vasco</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca8.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do São Paulo</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca10.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca12.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca16.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 220,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do Corinthians</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca17.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 140,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do São Paulo</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca18.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 140,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do Palmeiras</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca19.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 140,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do Vasco</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca20.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 140,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do Flamengo</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca21.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 140,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca23.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 170,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca24.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 220,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do Flamengo</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca25.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca26.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 220,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca27.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 220,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca28.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 220,00</div>                
+        </div>
+    <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca Flamengo</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca1.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca2.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do São Paulo</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca3.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca4.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca5.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca6.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 140,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do Palmeiras</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca7.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do Vasco</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca8.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do São Paulo</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca10.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca12.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca16.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 220,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do Corinthians</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca17.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 140,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do São Paulo</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca18.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 140,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do Palmeiras</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca19.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 140,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do Vasco</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca20.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 140,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do Flamengo</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca21.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 140,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca23.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 170,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca24.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 220,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca do Flamengo</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca25.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 260,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca26.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 220,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca27.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 220,00</div>                
+        </div>
+        <div class="product-card faca" style="display: block;">
+            <div class="product-title">Faca de Corte</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\facas\faca28.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 220,00</div>                
+        </div>
+        <div class="product-card outro" style="display: block;">
+            <div class="product-title">Protetor garrafa <br>1200ml</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\outros\protetor2.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 8,00</div>                
+        </div>
+        <div class="product-card outro" style="display: block;">
+            <div class="product-title">Protetor de garrafa <br>800ml</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\outros\protetor.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 6,00</div>                
+        </div>
+        <div class="product-card outro" style="display: block;">
+            <div class="product-title">Alça de garrafa</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\outros\alca.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 12,00</div>                
+        </div>
+        <div class="product-card outro" style="display: block;">
+            <div class="product-title">Alça de garrafa</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\outros\cordagarrafa.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 12,00</div>                
+        </div>
+        <div class="product-card garrafa" style="display: block;">
+            <div class="product-title">Garrafa Hyddra<br>950ml</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\imagenszap\zap17.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 55,00</div>                
+        </div>
+        <div class="product-card garrafa" style="display: block;">
+            <div class="product-title">Garrafa MDL pacco<br>800ml</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\imagenszap\zap15.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 50,00</div>                
+        </div>
+        <div class="product-card garrafa" style="display: block;">
+            <div class="product-title">Garrafa desportiva<br>500ml</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\imagenszap\zap20.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 30,00</div>                
+        </div>
+        <div class="product-card garrafa" style="display: block;">
+            <div class="product-title">Garrafa infantil<br>600ml</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\imagenszap\zap12.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 40,00</div>                
+        </div>
+        <div class="product-card garrafa" style="display: block;">
+            <div class="product-title">Garrafa com painel<br>420ml</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\imagenszap\zap21.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 23,50</div>                
+        </div>
+        <div class="product-card garrafa" style="display: block;">
+            <div class="product-title">Garrafa<br>800ml</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\imagenszap\zap14.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 30,00</div>                
+        </div>
+        <div class="product-card garrafa" style="display: block;">
+            <div class="product-title">Garrafa Hyddra<br>800ml</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\imagenszap\zap10.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 50,00</div>                
+        </div>
+        <div class="product-card garrafa" style="display: block;">
+            <div class="product-title">Garrafa<br>1000ml</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\imagenszap\zap9.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 52,00</div>                
+        </div>
+        <div class="product-card garrafa" style="display: block;">
+            <div class="product-title">Garrafa MDL pacco<br>1200ml</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\imagenszap\zap16.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 56,00</div>                
+        </div>
+        <div class="product-card garrafa" style="display: block;">
+            <div class="product-title">Garrafa Hyddra<br>550ml</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\imagenszap\zap13.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 40,00</div>                
+        </div>
+        <div class="product-card garrafa" style="display: block;">
+            <div class="product-title">Garrafa Hyddra<br>1200ml</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\imagenszap\zap18.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 65,00</div>                
+            
+        </div>
+        <div class="product-card garrafa" style="display: block;">
+            <div class="product-title">Garrafa Hyddra<br>360ml</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\imagenszap\zap11.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 42,00</div>                
+        </div>
+        <div class="product-card garrafa" style="display: block;">
+            <div class="product-title">Garrafa inox<br>500ml</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\imagenszap\zap19.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 20,00</div>                
+        </div>
+        <div class="product-card garrafa" style="display: block;">
+            <div class="product-title">Mini copo</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\garrafas\copo1.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 13,00</div>                
+        </div>
+        <div class="product-card garrafa" style="display: block;">
+            <div class="product-title">Copo de Wisk</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\garrafas\copo12.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 23,00</div>                
+        </div>
+        <div class="product-card garrafa" style="display: block;">
+            <div class="product-title">Copo staley</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\garrafas\copo13.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 60,00</div>                
+        </div>
+        <div class="product-card garrafa" style="display: block;">
+            <div class="product-title">Copo in+cerveja</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\garrafas\copo14.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 23,00</div>                
+        </div>
+        <div class="product-card garrafa" style="display: block;">
+            <div class="product-title">Copo com Canudo<br>1200ml</div>
+            <div class="product-subtitle"></div>
+            <img src="fotos\garrafas\copocanudo.jpg" class="product-image" alt="Carregador" loading="lazy">
+            <div class="product-specs">
+            </div>
+            <div class="units-box">1 UNIDADES</div>
+            <div class="price-box">R$ 68,00</div>                
+        </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Coloca preço G</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\preco.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">50 UNIDADES</div>
+                <div class="price-box">R$ 40,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Coloca preço M</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\preco.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">50 UNIDADES</div>
+                <div class="price-box">R$ 30,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Coloca preço GG</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\preco.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">50 UNIDADES</div>
+                <div class="price-box">R$ 50,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">coloca preço GG</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\preco1.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 13,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">cartão de memoria <br>32gb</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\drive.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 20,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">catão de memoria <br>64gb</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\cartao2.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 25,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Adaptador Receptor Bluetooth Usb Pendrive</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\pendrive.jpg" class="product-image" alt="Adaptador" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">modelo USB BT Dongle</div>
+                    <div class="spec-box">bluetooh usb</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 4,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Localizador</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\imagenszap\zap5.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 39,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">maleta artistica</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\maleta.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 35,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Kit caneta</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\canetas.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 58,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Caderno</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\caderno2.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 29,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">maleta artistica</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\maleta1.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 35,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Game pad</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\game1.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 89,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Game stick 4K</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\game2.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 129,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Teclado com fio</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\teclado.webp" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 50,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Teclado sem Fio</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\teclado11.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 50,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Esteção</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\estecao.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 7,50</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Caneta pra tablet</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\caneta.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 29,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Unitv</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\unitvv.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 280,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Fire tv stick</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\firetv.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 329,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Arma gel</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\arma.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 65,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Munição arma em gel</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\municao.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">5 mil UNIDADES</div>
+                <div class="price-box">R$ 2,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Fita led</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\led.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 25,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Liquificador portatil</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\liquidificador.webp" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 20,50</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">MASSAGE GUN</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\imagenszap\zap1.jpg" class="product-image" alt="Massage gun" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Marca It Blue</div>
+                    <div class="spec-box">Categoria Saúde</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 12,50</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Maquininha do Dragâo</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\maquininha.jpg" class="product-image" alt="Maquininha dragão" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Potência: 4 W</div>
+                    <div class="spec-box">Tipos de cabeças Removíveis</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 10,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">UMIFICADOR DE AR USB SILENCI</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\imagenszap\zap2.jpg" class="product-image" alt="Umificador" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Temperatuda vapor ambiente</div>
+                    <div class="spec-box">Capacidade de água 260L</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 25,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">VENTILADOR UMIFICADOR DE AR</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\ventilador.webp" class="product-image" alt="Ventilador" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Comprimento: 21 cm</div>
+                    <div class="spec-box">Voltagem 127/220V</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 38,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">MINI PROJETOR</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\prgetor.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                    <div class="spec-box">Resolução	4K, 1080p</div>
+                    <div class="spec-box">Potência em watts	45 watts</div>
+                    <div class="spec-box">Tecnologia de conexão Wi-Fi, USB</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 280,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Rolo de Fita</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\fita.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 11,50</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Sapateira organizadora</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\sapa.webp" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 20,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Rádio baofeng</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\radio.webp" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 94,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Microfone de lapela</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\imagenszap\zap3.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                    <div class="space-box">IOS</div>
+                    <div class="space-box">Tipo C</div>
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 45,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">incenso mata mosquito</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\imagenszap\zap8.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 4,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Repetidor de Wifi</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\Wifi.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 20,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Cola para celular</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\cola.webp" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 10,00</div>                
+            </div>
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Corda para celular</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\corda.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 16,00</div>                
+            </div>
+            <!--<div class="product-card outro" style="display: block;">
+                <div class="product-title">Teclado e Mouse</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\teclado12.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 0,00</div>                
+            </div>-->
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Banco</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\imagenszap\zap7.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 20,00</div>                
+            </div>  
+            <div class="product-card outro" style="display: block;">
+                <div class="product-title">Cadeira Gamer</div>
+                <div class="product-subtitle"></div>
+                <img src="fotos\outros\cadeira.jpg" class="product-image" alt="Mini progetor" loading="lazy">
+                <div class="product-specs">
+                </div>
+                <div class="units-box">1 UNIDADES</div>
+                <div class="price-box">R$ 999,00</div>                
+            </div>
+        </div>
+         </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    filterSelection("all"); // Aplica o filtro automaticamente ao carregar a página
+});
+
+        function filterSelection(category) {
+    let products = document.querySelectorAll(".product-card");
+
+    products.forEach(product => {
+        product.style.display = "none"; // Oculta todos os produtos
+
+        if (category === "all") {
+            // Exibe apenas os produtos da classe "outro"
+             {
+                product.style.display = "block";
+            }
+        } else if (product.classList.contains(category)) {
+            product.style.display = "block"; // Exibe os produtos da categoria selecionada
+        }
+    });
+}
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuButton = document.querySelector(".menu-button");
+            const menu = document.querySelector(".filters");
+            const menuItems = document.querySelectorAll(".filters button");
+
+            // Alterna a visibilidade do menu ao clicar no botão
+            menuButton.addEventListener("click", function (event) {
+                event.stopPropagation();
+                menu.classList.toggle("active");
+            });
+
+            // Fecha o menu ao clicar em um item
+            menuItems.forEach(item => {
+                item.addEventListener("click", function () {
+                    menu.classList.remove("active");
+                });
+            });
+
+            // Fecha o menu ao clicar fora dele
+            document.addEventListener("click", function (event) {
+                if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+                    menu.classList.remove("active");
+                }
+            });
+        });
+    </script>
+
+
+</body></html>
